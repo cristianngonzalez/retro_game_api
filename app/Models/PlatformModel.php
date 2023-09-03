@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PlatformsModel extends Model
+class PlatformModel extends Model
 {
     use HasFactory;
 
@@ -18,6 +18,8 @@ class PlatformsModel extends Model
         'release_date',
         'discontinued_date',
         'manufacturer_id',
-        'generation_id'
+        'generation_id',
+        'successor_id',
+        'predecessor_id',
     ];
 }
