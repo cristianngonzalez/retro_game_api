@@ -22,10 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::group(
-    [
-        'prefix' => 'game'
-    ],
+Route::group(['prefix' => 'game'],
+    function () {
+        Route::get('list', [GameController::class, 'list']);
+    }
+);
+
+Route::group(['prefix' => 'platform'],
     function () {
         Route::get('list', [GameController::class, 'list']);
     }
