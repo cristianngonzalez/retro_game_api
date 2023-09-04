@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 //Controllers
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\PlatformController;
+use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\GenerationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +33,26 @@ Route::group(['prefix' => 'game'],
     }
 );
 
+Route::group(['prefix' => 'genre'],
+    function () {
+        Route::get('list', [GenreController::class, 'list']);
+    }
+);
+
 Route::group(['prefix' => 'platform'],
     function () {
-        Route::get('list', [GameController::class, 'list']);
+        Route::get('list', [PlatformController::class, 'list']);
+    }
+);
+
+Route::group(['prefix' => 'publisher'],
+    function () {
+        Route::get('list', [PublisherController::class, 'list']);
+    }
+);
+
+Route::group(['prefix' => 'generation'],
+    function () {
+        Route::get('list', [GenerationController::class, 'list']);
     }
 );
