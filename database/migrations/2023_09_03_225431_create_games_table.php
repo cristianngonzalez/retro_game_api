@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->text('description');
-            $table->string('download_link', 255);
-            $table->date('release_date');
+            $table->text('description')->nullable();
+            $table->string('download_link', 255)->nullable();
+            $table->date('release_date')->nullable();
             $table->integer('publisher_id');
-            $table->string('cover', 255);
+            $table->string('cover', 255)->nullable();
             $table->integer('genre_id');
             $table->integer('platform_id');
             $table->timestamps();

@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('platforms', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->text('description');
-            $table->string('logo', 255);
-            $table->date('release_date');
-            $table->date('discontinued_date');
+            $table->string('name', 255)->nullable();
+            $table->text('description')->nullable();
+            $table->string('logo', 255)->nullable();
+            $table->date('release_date')->nullable();
+            $table->date('discontinued_date')->nullable();
             $table->integer('manufacturer_id');
             $table->integer('generation_id');
-            $table->integer('successor_id');
-            $table->integer('predecessor_id');
+            $table->integer('successor_id')->nullable();;
+            $table->integer('predecessor_id')->nullable();;
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\GenerationController;
-
+use App\Http\Controllers\ManufacturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,5 +54,11 @@ Route::group(['prefix' => 'publisher'],
 Route::group(['prefix' => 'generation'],
     function () {
         Route::get('list', [GenerationController::class, 'list']);
+    }
+);
+
+Route::group(['prefix' => 'manufacturer'],
+    function () {
+        Route::get('list', [ManufacturerController::class, 'list']);
     }
 );

@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('generations', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->text('description');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->boolean('current');
+            $table->text('description')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->boolean('current')->nullable();
             $table->timestamps();
         });
     }
